@@ -1,0 +1,13 @@
+<h1>Result</h1>
+
+<% if @included %>
+  <% if @english_word %>
+    <p><strong>Congratulation!</strong> <%= @word.upcase %> is a valid English word and gets you <%= @score %></p>
+  <% else %>
+    <p>Sorry but <strong><%= @word.upcase %></strong> don't seem to be a valid English word</p>
+  <% end %>
+<% else %>
+  <p>Sorry but <strong><%= @word.upcase %></strong> can't be build out of <%= @letters.upcase %></p>
+<% end %>
+
+<%= link_to "Play again", root_path %>
